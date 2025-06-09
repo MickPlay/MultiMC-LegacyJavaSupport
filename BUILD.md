@@ -26,7 +26,7 @@ The MultiMC name is a registered trademark. You may not create binary distributi
 Clone the source code using git and grab all the submodules:
 
 ```
-git clone https://github.com/MultiMC/Launcher.git
+git clone https://github.com/MickPlay/MultiMC-LegacyJavaSupport.git
 git submodule init
 git submodule update
 ```
@@ -54,7 +54,7 @@ mkdir ~/MultiMC && cd ~/MultiMC
 mkdir build
 mkdir install
 # clone the complete source
-git clone --recursive https://github.com/MultiMC/Launcher.git src
+git clone --recursive https://github.com/MickPlay/MultiMC-LegacyJavaSupport.git src
 # configure the project
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=../install ../src
@@ -199,7 +199,7 @@ xcode-select --install
 Pick an installation path - this is where the final `.app` will be constructed when you run `make install`. Supply it as the `CMAKE_INSTALL_PREFIX` argument during CMake configuration.
 
 ```
-git clone --recursive https://github.com/MultiMC/Launcher.git
+git clone --recursive https://github.com/MickPlay/MultiMC-LegacyJavaSupport.git
 cd Launcher
 mkdir build
 cd build
