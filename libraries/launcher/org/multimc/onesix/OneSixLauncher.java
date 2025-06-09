@@ -223,31 +223,39 @@ public class OneSixLauncher implements Launcher
         }
 
         // get the main method.
-        Method meth;
+        Method meth = null;
         try
         {
             meth = mc.getMethod("main", String[].class);
             meth.setAccessible(true);
-        } catch (NoSuchMethodException | SecurityException e)
-        {
-            System.err.println("Failed to acquire the main method:");
-            e.printStackTrace(System.err);
-            return -1;
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (SecurityException e) {
+            e.printStackTrace();
         }
 
         // init params for the main method to chomp on.
         String[] paramsArray = mcparams.toArray(new String[mcparams.size()]);
-        try
+
+        if (meth != null)
         {
-            // static method doesn't have an instance
-            meth.invoke(null, (Object) paramsArray);
-        } catch (Exception e)
+            try
+            {
+                // static method doesn't have an instance
+                meth.invoke(null, (Object) paramsArray);
+            } catch (Exception e)
+            {
+                System.err.println("Failed to start Minecraft:");
+                (e instanceof InvocationTargetException ? e.getCause() : e).printStackTrace(System.err);
+                return -1;
+            }
+            return 0;
+        }
+        else
         {
-            System.err.println("Failed to start Minecraft:");
-            (e instanceof InvocationTargetException ? e.getCause() : e).printStackTrace(System.err);
+            System.err.println("Main method not found, cannot launch Minecraft.");
             return -1;
         }
-        return 0;
     }
 
     @Override
