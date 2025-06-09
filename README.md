@@ -1,53 +1,20 @@
-<p align="center">
-  <img src="https://avatars2.githubusercontent.com/u/5411890" alt="MultiMC logo"/>
-</p>
+# MultiMC Java 6 Fork
 
-MultiMC
-=======
+✅ A fork of MultiMC (0.7.x) with restored **Java 6** support  
+🎮 Allows launching older versions of Minecraft (up to 1.11.2) with original Java 6 compatibility  
+🛠 Based on the official MultiMC version
 
-MultiMC is a custom launcher for Minecraft that focuses on predictability, long term stability and simplicity.
+## Differences from the original
 
-## Development
-If you want to contribute, talk to us on [Discord](https://discord.gg/multimc) first.
+- Minimal changes to enable compatibility with **Java 6**.
+- Fixed `OneSixLauncher.java` to compile correctly with `-source 1.6`.
+- No changes to the rest of the code — all other functionality matches MultiMC 0.7.x.
 
-While blindly submitting PRs is definitely possible, they're not necessarily going to get accepted.
+## Why is this useful?
 
-We aren't looking for flashy features, but expanding upon the existing feature set without disruption or endangering the future viability of the project is OK.
+Some older Minecraft mods and versions (such as 1.5.2 to 1.11.2) require **Java 6**.  
+Modern versions of MultiMC have dropped Java 6 support, so this fork is useful for running legacy projects, archival servers, or for testing purposes.
 
-### Building
-If you want to build the launcher yourself, check [BUILD.md](BUILD.md) for build instructions.
+## Usage
 
-### Code formatting
-Just follow the existing formatting.
-
-In general, in order of importance:
-* Make sure your IDE is not messing up line endings or whitespace and avoid using linters.
-* Prefer readability over dogma.
-* Keep to the existing formatting.
-* Indent with 4 space unless it's in a submodule.
-* Keep lists (of arguments, parameters, initializers...) as lists, not paragraphs. It should either read from top to bottom, or left to right. Not both.
-
-## Translations
-Translations can be done [on crowdin](https://translate.multimc.org). Please avoid making direct pull requests to the translations repository.
-
-## License
-Copyright &copy; 2013-2022 MultiMC Contributors
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this program except in compliance with the License. You may obtain a copy of the License at [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
-
-## Forking/Redistributing/Custom builds policy
-We keep Launcher open source because we think it's important to be able to see the source code for a project like this, and we do so using the Apache license.
-
-The license gives you access to the source MultiMC is built from, but not:
-- The name, logo and other branding.
-- The API tokens required to talk to services that the launcher depends on.
-
-Because of the nature of the agreements required to interact with the Microsoft identity platform, it's impossible for us to continue allowing everyone to build the code as 'MultiMC'. The source code has been debranded and now builds as `DevLauncher` by default.
-
-You must provide your own branding if you want to distribute your own builds.
-
-You will also have to register your own app on Azure to be able to handle Microsoft account logins.
-
-If you decide to fork the project, a mention of its origins in the About dialog and the license is acceptable. However, it should be abundantly clear that the project is a fork *without* implying that you have our blessing.
+Build the project the same way as the original MultiMC.  
